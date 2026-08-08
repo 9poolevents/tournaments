@@ -234,9 +234,7 @@ const playerCount =
 const noPlayer =
     document.getElementById("noPlayer");
 
-
 let currentFilter = "ALL";
-
 
 
 function displayPlayers() {
@@ -329,10 +327,14 @@ function displayPlayers() {
 // SEARCH
 // =================================
 
-playerSearch.addEventListener(
-    "input",
-    displayPlayers
-);
+if (playerSearch) {
+
+    playerSearch.addEventListener(
+        "input",
+        displayPlayers
+    );
+
+}
 
 
 
@@ -344,11 +346,9 @@ document
     .querySelectorAll(".filter-button")
     .forEach(function(button) {
 
-
         button.addEventListener(
             "click",
             function() {
-
 
                 document
                     .querySelectorAll(".filter-button")
@@ -374,12 +374,20 @@ document
     });
 
 
-
 // =================================
 // INITIAL DISPLAY
 // =================================
 
-displayPlayers();
+if (
+    playersGrid &&
+    playerSearch &&
+    playerCount &&
+    noPlayer
+) {
+
+    displayPlayers();
+
+}
 // =================================
 // REGISTERED PARTICIPANTS
 // V1.2
@@ -483,4 +491,12 @@ function displayParticipants() {
 }
 
 
-displayParticipants();
+if (
+    participantsGrid &&
+    participantCount &&
+    noParticipant
+) {
+
+    displayParticipants();
+
+}

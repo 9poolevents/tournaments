@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>9-Pool Tournament Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     ADMIN HEADER
+========================= -->
+
+<header class="admin-header">
+
+    <div class="admin-header-inner">
+
+        <div class="admin-brand">
+
+            <img
+                src="images/logo.png"
+                alt="9-Pool Billiards & Cafe"
+            >
+
+            <div>
+
+                <span>
+                    TOURNAMENT ADMIN
+                </span>
+
+                <strong>
+                    HOME TOURNAMENT 2026
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="index.html"
+            class="back-button"
+        >
+            ← WEBSITE
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
+<main class="admin-main">
+
+
+    <section class="admin-dashboard">
+
+
+        <div class="dashboard-title">
+
+            <span class="section-label">
+                9-POOL BILLIARDS & CAFE
+            </span>
+
+            <h1>
+                ADMIN PANEL
+            </h1>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="summary-grid">
+
+
+            <div class="summary-card">
+
+                <span>
+                    REGISTERED
+                </span>
+
+                <strong id="registeredCount">
+                    0
+                </strong>
+
+                <small>
+                    / 64
+                </small>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    AVAILABLE
+                </span>
+
+                <strong id="availableCount">
+                    64
+                </strong>
+
+                <small>
+                    SLOTS
+                </small>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    DATABASE
+                </span>
+
+                <strong id="databaseCount">
+                    0
+                </strong>
+
+                <small>
+                    PLAYERS
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PLAYER MANAGEMENT -->
+
+        <div class="management-panel">
+
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="section-label">
+                        PLAYER MANAGEMENT
+                    </span>
+
+                    <h2>
+                        REGISTER PARTICIPANTS
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="admin-search">
+
+                <input
+                    type="text"
+                    id="adminSearch"
+                    placeholder="Cari nama pemain..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- FILTER -->
+
+            <div class="admin-filter">
+
+                <button
+                    class="admin-filter-button active"
+                    data-filter="ALL"
+                >
+                    ALL
+                </button>
+
+
+                <button
+                    class="admin-filter-button"
+                    data-filter="3A"
+                >
+                    HC 3A
+                </button>
+
+
+                <button
+                    class="admin-filter-button"
+                    data-filter="3B"
+                >
+                    HC 3B
+                </button>
+
+            </div>
+
+
+            <!-- PLAYER LIST -->
+
+            <div
+                class="admin-player-list"
+                id="adminPlayerList"
+            ></div>
+
+
+            <div
+                class="admin-empty"
+                id="adminEmpty"
+            >
+                Pemain tidak ditemukan.
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="players-data.js"></script>
+<script src="admin.js"></script>
+
+</body>
+
+</html>

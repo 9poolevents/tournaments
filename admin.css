@@ -1,0 +1,545 @@
+/* ==============================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #090909;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* ==============================
+   HEADER
+================================ */
+
+.admin-header {
+    background: #000000;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.admin-header-inner {
+    width: 92%;
+
+    max-width: 1200px;
+
+    min-height: 80px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.admin-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.admin-brand img {
+    width: 135px;
+
+    display: block;
+}
+
+
+.admin-brand span {
+    display: block;
+
+    color: #f7931e;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.admin-brand strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+.back-button {
+    padding: 10px 18px;
+
+    border: 1px solid #444;
+
+    color: #aaa;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+
+.back-button:hover {
+    border-color: #f7931e;
+
+    color: #f7931e;
+}
+
+
+/* ==============================
+   MAIN
+================================ */
+
+.admin-main {
+    min-height: calc(100vh - 80px);
+
+    padding: 70px 20px;
+}
+
+
+.admin-dashboard {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.dashboard-title {
+    margin-bottom: 35px;
+}
+
+
+.section-label {
+    color: #f7931e;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+.dashboard-title h1 {
+    margin-top: 8px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 70px;
+
+    letter-spacing: 3px;
+}
+
+
+/* ==============================
+   SUMMARY
+================================ */
+
+.summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 40px;
+}
+
+
+.summary-card {
+    position: relative;
+
+    padding: 28px;
+
+    background: #151515;
+
+    border: 1px solid #303030;
+}
+
+
+.summary-card span {
+    display: block;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.summary-card strong {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: #ffd54a;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 55px;
+
+    line-height: 1;
+}
+
+
+.summary-card small {
+    color: #666;
+
+    font-size: 11px;
+
+    margin-left: 5px;
+}
+
+
+/* ==============================
+   MANAGEMENT
+================================ */
+
+.management-panel {
+    padding: 35px;
+
+    background: #111111;
+
+    border: 1px solid #292929;
+}
+
+
+.panel-header h2 {
+    margin-top: 5px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 40px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==============================
+   SEARCH
+================================ */
+
+.admin-search {
+    margin-top: 30px;
+}
+
+
+.admin-search input {
+    width: 100%;
+
+    padding: 16px 18px;
+
+    background: #191919;
+
+    border: 1px solid #333;
+
+    border-radius: 3px;
+
+    outline: none;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+}
+
+
+.admin-search input:focus {
+    border-color: #f7931e;
+}
+
+
+/* ==============================
+   FILTER
+================================ */
+
+.admin-filter {
+    display: flex;
+
+    gap: 8px;
+
+    margin: 15px 0 25px;
+}
+
+
+.admin-filter-button {
+    padding: 9px 20px;
+
+    background: #191919;
+
+    color: #888;
+
+    border: 1px solid #333;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+.admin-filter-button.active {
+    background: #f7931e;
+
+    color: #000;
+
+    border-color: #f7931e;
+}
+
+
+/* ==============================
+   PLAYER LIST
+================================ */
+
+.admin-player-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.admin-player {
+    display: grid;
+
+    grid-template-columns:
+        55px
+        1fr
+        80px
+        130px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 70px;
+
+    padding: 10px 15px;
+
+    background: #171717;
+
+    border: 1px solid #292929;
+}
+
+
+.admin-player:hover {
+    border-color: #444;
+}
+
+
+.admin-player-number {
+    color: #444;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 30px;
+}
+
+
+.admin-player-name {
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.admin-player-hc {
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 5px 9px;
+
+    background: #ffd54a;
+
+    color: #000;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+.admin-status {
+    text-align: right;
+}
+
+
+.register-button,
+.remove-button {
+    width: 110px;
+
+    padding: 9px 10px;
+
+    border: 0;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.register-button {
+    background: #f7931e;
+
+    color: #000;
+}
+
+
+.register-button:hover {
+    background: #ffd54a;
+}
+
+
+.remove-button {
+    background: #292929;
+
+    color: #aaa;
+
+    border: 1px solid #444;
+}
+
+
+.remove-button:hover {
+    color: #ffffff;
+
+    border-color: #f7931e;
+}
+
+
+/* ==============================
+   EMPTY
+================================ */
+
+.admin-empty {
+    display: none;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    .admin-header-inner {
+        min-height: 70px;
+    }
+
+
+    .admin-brand img {
+        width: 105px;
+    }
+
+
+    .admin-brand strong {
+        font-size: 9px;
+    }
+
+
+    .back-button {
+        padding: 8px 10px;
+
+        font-size: 8px;
+    }
+
+
+    .admin-main {
+        padding: 45px 12px;
+    }
+
+
+    .dashboard-title h1 {
+        font-size: 55px;
+    }
+
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .management-panel {
+        padding: 20px 12px;
+    }
+
+
+    .panel-header h2 {
+        font-size: 32px;
+    }
+
+
+    .admin-player {
+        grid-template-columns:
+            35px
+            1fr
+            60px;
+
+        gap: 8px;
+
+        padding: 10px;
+    }
+
+
+    .admin-status {
+        grid-column: 2 / 4;
+
+        text-align: left;
+    }
+
+
+    .register-button,
+    .remove-button {
+        width: 100%;
+    }
+
+}
