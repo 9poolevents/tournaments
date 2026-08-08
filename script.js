@@ -380,3 +380,107 @@ document
 // =================================
 
 displayPlayers();
+// =================================
+// REGISTERED PARTICIPANTS
+// V1.2
+// =================================
+
+const registeredParticipants = [
+    "AKEN",
+    "LAROSA",
+    "YOSIA"
+];
+// =================================
+// DISPLAY REGISTERED PARTICIPANTS
+// =================================
+
+const participantsGrid =
+    document.getElementById("participantsGrid");
+
+const participantCount =
+    document.getElementById("participantCount");
+
+const noParticipant =
+    document.getElementById("noParticipant");
+
+
+function displayParticipants() {
+
+    participantsGrid.innerHTML = "";
+
+
+    participantCount.innerHTML =
+        registeredParticipants.length;
+
+
+    if (registeredParticipants.length === 0) {
+
+        noParticipant.style.display = "block";
+
+        return;
+
+    }
+
+
+    noParticipant.style.display = "none";
+
+
+    registeredParticipants.forEach(
+        function(playerName, index) {
+
+
+            const player =
+                players.find(
+                    function(item) {
+
+                        return item.name === playerName;
+
+                    }
+                );
+
+
+            if (!player) {
+
+                return;
+
+            }
+
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "participant-card";
+
+
+            card.innerHTML = `
+
+                <span class="participant-number">
+                    ${String(index + 1).padStart(2, "0")}
+                </span>
+
+                <span class="participant-hc">
+                    HC ${player.handicap}
+                </span>
+
+                <span class="participant-name">
+                    ${player.name}
+                </span>
+
+                <span class="participant-status">
+                    ✓ REGISTERED
+                </span>
+
+            `;
+
+
+            participantsGrid.appendChild(card);
+
+        }
+    );
+
+}
+
+
+displayParticipants();
