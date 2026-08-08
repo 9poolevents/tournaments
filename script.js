@@ -12,8 +12,6 @@ menuButton.addEventListener("click", function () {
 });
 
 
-// Tutup menu setelah link dipilih
-
 document.querySelectorAll(".nav-menu a").forEach(function(link) {
 
     link.addEventListener("click", function() {
@@ -25,14 +23,10 @@ document.querySelectorAll(".nav-menu a").forEach(function(link) {
 });
 
 
+
 // =================================
 // COUNTDOWN
 // =================================
-
-// Tournament:
-// 13 Agustus 2026
-// 15:00 WIB
-// WIB = UTC+7
 
 const tournamentDate =
     new Date("2026-08-13T15:00:00+07:00").getTime();
@@ -58,7 +52,9 @@ function updateCountdown() {
 
 
     const days =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
+        Math.floor(
+            distance / (1000 * 60 * 60 * 24)
+        );
 
 
     const hours =
@@ -106,3 +102,281 @@ function updateCountdown() {
 updateCountdown();
 
 setInterval(updateCountdown, 1000);
+
+
+
+// =================================
+// 9-POOL PLAYER DATABASE
+// =================================
+
+// HC 3A
+
+const players3A = [
+
+    "AKEN",
+    "CHAD",
+    "ONEZ",
+    "TOREZ",
+    "ALFIN SIDEMPUAN"
+
+];
+
+
+// HC 3B
+
+const players3B = [
+
+    "AGUS NETRAL",
+    "ARIS HULU",
+    "ALEX",
+    "PANDI",
+    "LAROSA",
+    "NOYAN",
+    "NATHAN",
+    "KHENNY",
+    "PAK BUDI",
+    "AMIRUL",
+    "LAHI",
+    "YASOKHI",
+    "ARFAN",
+    "SOLI LAOLI",
+    "LAURENSIUS",
+    "SOLIS",
+    "GIDEON",
+    "IKLAS",
+    "JONATHAN",
+    "GUSU",
+    "PAK SUM",
+    "PIAN",
+    "NELSON",
+    "ALDI JULMAN",
+    "YOSIA",
+    "SILABAN",
+    "TAUFIK",
+    "PANDU",
+    "RIO HAREFA",
+    "APRISON",
+    "OM ANTOK",
+    "JESSICA",
+    "KELIN",
+    "ALDION",
+    "ARFAN",
+    "SALSA",
+    "KO ASEN",
+    "FAHRUL",
+    "MARKUS HULU",
+    "ALFIN TEL",
+    "CERIA",
+    "BANG TONGEN",
+    "AMOS SIBARANI",
+    "GABE",
+    "WILLIAM",
+    "APPO",
+    "EZA",
+    "CHARLES",
+    "CG",
+    "CAKRA",
+    "IWAN",
+    "PAK ARI",
+    "JUL",
+    "MARYANTO",
+    "NOVERIUS",
+    "PAMAN KANCIL",
+    "YUDHA",
+    "MAHARANI",
+    "HABIBI",
+    "DILZY"
+
+];
+
+
+// =================================
+// CREATE PLAYER OBJECTS
+// =================================
+
+const players = [
+
+    ...players3A.map(function(name) {
+
+        return {
+            name: name,
+            handicap: "3A"
+        };
+
+    }),
+
+
+    ...players3B.map(function(name) {
+
+        return {
+            name: name,
+            handicap: "3B"
+        };
+
+    })
+
+];
+
+
+// =================================
+// PLAYER DISPLAY
+// =================================
+
+const playersGrid =
+    document.getElementById("playersGrid");
+
+const playerSearch =
+    document.getElementById("playerSearch");
+
+const playerCount =
+    document.getElementById("playerCount");
+
+const noPlayer =
+    document.getElementById("noPlayer");
+
+
+let currentFilter = "ALL";
+
+
+
+function displayPlayers() {
+
+    const searchText =
+        playerSearch.value
+        .toUpperCase()
+        .trim();
+
+
+    const filteredPlayers =
+        players.filter(function(player) {
+
+
+            const matchName =
+                player.name.includes(searchText);
+
+
+            const matchHC =
+                currentFilter === "ALL"
+                ||
+                player.handicap === currentFilter;
+
+
+            return matchName && matchHC;
+
+        });
+
+
+    playersGrid.innerHTML = "";
+
+
+    playerCount.innerHTML =
+        filteredPlayers.length;
+
+
+    if (filteredPlayers.length === 0) {
+
+        noPlayer.style.display = "block";
+
+        return;
+
+    }
+
+
+    noPlayer.style.display = "none";
+
+
+    filteredPlayers.forEach(function(player, index) {
+
+
+        const card =
+            document.createElement("div");
+
+
+        card.className =
+            "player-card";
+
+
+        card.innerHTML = `
+
+            <span class="player-number">
+                ${String(index + 1).padStart(2, "0")}
+            </span>
+
+            <span class="player-hc">
+                HC ${player.handicap}
+            </span>
+
+            <span class="player-name">
+                ${player.name}
+            </span>
+
+            <span class="player-status">
+                9-POOL PLAYER DATABASE
+            </span>
+
+        `;
+
+
+        playersGrid.appendChild(card);
+
+    });
+
+}
+
+
+
+// =================================
+// SEARCH
+// =================================
+
+playerSearch.addEventListener(
+    "input",
+    displayPlayers
+);
+
+
+
+// =================================
+// FILTER
+// =================================
+
+document
+    .querySelectorAll(".filter-button")
+    .forEach(function(button) {
+
+
+        button.addEventListener(
+            "click",
+            function() {
+
+
+                document
+                    .querySelectorAll(".filter-button")
+                    .forEach(function(item) {
+
+                        item.classList.remove("active");
+
+                    });
+
+
+                button.classList.add("active");
+
+
+                currentFilter =
+                    button.dataset.filter;
+
+
+                displayPlayers();
+
+            }
+        );
+
+    });
+
+
+
+// =================================
+// INITIAL DISPLAY
+// =================================
+
+displayPlayers();

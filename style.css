@@ -35,9 +35,7 @@ a {
     left: 0;
     width: 100%;
     z-index: 1000;
-
-    background: rgba(0,0,0,0.92);
-
+    background: rgba(0, 0, 0, 0.92);
     border-bottom: 1px solid #303030;
 }
 
@@ -45,7 +43,6 @@ a {
     width: 92%;
     max-width: 1250px;
     height: 85px;
-
     margin: auto;
 
     display: flex;
@@ -68,7 +65,6 @@ a {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 1px;
-
     transition: 0.3s;
 }
 
@@ -78,14 +74,10 @@ a {
 
 .menu-button {
     display: none;
-
     border: 0;
     background: transparent;
-
     color: white;
-
     font-size: 28px;
-
     cursor: pointer;
 }
 
@@ -489,6 +481,240 @@ a {
 
 
 /* ==============================
+   PLAYERS
+================================ */
+
+.players-section {
+    background: #0b0b0b;
+}
+
+
+/* SEARCH */
+
+.player-search {
+    max-width: 600px;
+
+    margin: 40px auto 20px;
+}
+
+.player-search input {
+    width: 100%;
+
+    padding: 16px 20px;
+
+    background: #171717;
+
+    border: 1px solid #303030;
+
+    border-radius: 4px;
+
+    outline: none;
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.player-search input::placeholder {
+    color: #666;
+}
+
+.player-search input:focus {
+    border-color: #f7931e;
+}
+
+
+/* FILTER */
+
+.player-filter {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 20px 0 25px;
+}
+
+.filter-button {
+    padding: 10px 22px;
+
+    background: #171717;
+
+    color: #aaa;
+
+    border: 1px solid #303030;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.filter-button:hover {
+    border-color: #f7931e;
+
+    color: #f7931e;
+}
+
+.filter-button.active {
+    background: #f7931e;
+
+    border-color: #f7931e;
+
+    color: #000;
+}
+
+
+/* PLAYER COUNT */
+
+.player-count {
+    margin-bottom: 25px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.player-count span {
+    color: #ffd54a;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* PLAYER GRID */
+
+.players-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    text-align: left;
+}
+
+
+/* PLAYER CARD */
+
+.player-card {
+    position: relative;
+
+    min-height: 145px;
+
+    padding: 22px;
+
+    background: #171717;
+
+    border: 1px solid #303030;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.player-card:hover {
+    border-color: #f7931e;
+
+    transform: translateY(-4px);
+}
+
+.player-number {
+    position: absolute;
+
+    top: 8px;
+
+    right: 15px;
+
+    color: #333;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 50px;
+}
+
+.player-hc {
+    display: inline-block;
+
+    padding: 4px 10px;
+
+    background: #ffd54a;
+
+    color: #000;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.player-name {
+    display: block;
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+}
+
+.player-status {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* NO PLAYER */
+
+.no-player {
+    display: none;
+
+    padding: 50px 20px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* ==============================
    PRIZE
 ================================ */
 
@@ -701,6 +927,16 @@ footer {
    MOBILE
 ================================ */
 
+@media (max-width: 1000px) {
+
+    .players-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
 @media (max-width: 800px) {
 
     .nav-container {
@@ -765,6 +1001,11 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .players-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
     .prize-grid {
         grid-template-columns: 1fr;
     }
@@ -794,12 +1035,20 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+
     .countdown-box span {
         font-size: 42px;
     }
 
     .champion-card h3 {
         font-size: 48px;
+    }
+
+    .player-filter {
+        flex-wrap: wrap;
     }
 
 }

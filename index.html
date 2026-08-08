@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>9-Pool Home Tournament 2026</title>
 
-    <meta name="description" content="Official Home Tournament 9-Pool Billiards & Cafe - 13-14 Agustus 2026">
+    <meta name="description"
+        content="Official Home Tournament 9-Pool Billiards & Cafe - 13-14 Agustus 2026">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
+
 <body>
+
 
 <!-- =========================
      NAVBAR
@@ -32,14 +39,21 @@
 
         </a>
 
+
         <nav class="nav-menu">
 
             <a href="#home">HOME</a>
+
             <a href="#info">INFO</a>
+
+            <a href="#players">PLAYERS</a>
+
             <a href="#prize">HADIAH</a>
+
             <a href="#rules">RULES</a>
 
         </nav>
+
 
         <button class="menu-button" id="menuButton" aria-label="Buka menu">
             ☰
@@ -48,6 +62,7 @@
     </div>
 
 </header>
+
 
 
 <!-- =========================
@@ -64,34 +79,42 @@
             OFFICIAL TOURNAMENT
         </div>
 
+
         <img
             src="images/logo.png"
             alt="9-Pool Billiards & Cafe"
             class="hero-logo"
         >
 
+
         <div class="hero-line"></div>
+
 
         <p class="hero-small">
             PRESENTS
         </p>
+
 
         <h1>
             HOME
             <span>TOURNAMENT</span>
         </h1>
 
+
         <div class="game-type">
             9 BALL
         </div>
+
 
         <p class="event-date">
             13 — 14 AGUSTUS 2026
         </p>
 
+
         <p class="event-time">
             PUKUL 15.00 WIB — SELESAI
         </p>
+
 
         <div class="hero-buttons">
 
@@ -99,20 +122,25 @@
                 LIHAT INFO
             </a>
 
-            <a href="#prize" class="button secondary-button">
-                LIHAT HADIAH
+            <a href="#players" class="button secondary-button">
+                LIHAT PLAYERS
             </a>
 
         </div>
 
     </div>
 
+
     <div class="scroll-indicator">
+
         <span>SCROLL</span>
+
         <div class="scroll-line"></div>
+
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -127,30 +155,47 @@
             MENUJU TURNAMEN
         </p>
 
+
         <h2 class="section-title">
             COUNTDOWN
         </h2>
 
+
         <div class="countdown">
 
             <div class="countdown-box">
+
                 <span id="days">00</span>
+
                 <small>HARI</small>
+
             </div>
 
+
             <div class="countdown-box">
+
                 <span id="hours">00</span>
+
                 <small>JAM</small>
+
             </div>
 
+
             <div class="countdown-box">
+
                 <span id="minutes">00</span>
+
                 <small>MENIT</small>
+
             </div>
 
+
             <div class="countdown-box">
+
                 <span id="seconds">00</span>
+
                 <small>DETIK</small>
+
             </div>
 
         </div>
@@ -158,6 +203,7 @@
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -172,9 +218,11 @@
             EVENT DETAILS
         </p>
 
+
         <h2 class="section-title">
             INFORMASI TURNAMEN
         </h2>
+
 
         <p class="section-description">
             Home Tournament khusus komunitas
@@ -183,6 +231,7 @@
 
 
         <div class="info-grid">
+
 
             <div class="info-card">
 
@@ -258,6 +307,109 @@
 </section>
 
 
+
+<!-- =========================
+     PLAYERS
+========================= -->
+
+<section class="section players-section" id="players">
+
+    <div class="section-container">
+
+        <p class="section-label">
+            9-POOL PLAYER DATABASE
+        </p>
+
+
+        <h2 class="section-title">
+            PLAYERS
+        </h2>
+
+
+        <p class="section-description">
+            Daftar pemain berdasarkan pembagian handicap
+            versi 9-Pool.
+        </p>
+
+
+        <!-- SEARCH -->
+
+        <div class="player-search">
+
+            <input
+                type="text"
+                id="playerSearch"
+                placeholder="Cari nama pemain..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <div class="player-filter">
+
+            <button
+                class="filter-button active"
+                data-filter="ALL"
+            >
+                ALL
+            </button>
+
+
+            <button
+                class="filter-button"
+                data-filter="3A"
+            >
+                HC 3A
+            </button>
+
+
+            <button
+                class="filter-button"
+                data-filter="3B"
+            >
+                HC 3B
+            </button>
+
+        </div>
+
+
+        <!-- PLAYER COUNT -->
+
+        <div class="player-count">
+
+            <span id="playerCount">
+                0
+            </span>
+
+            PLAYERS
+
+        </div>
+
+
+        <!-- PLAYER LIST -->
+
+        <div
+            class="players-grid"
+            id="playersGrid"
+        ></div>
+
+
+        <div
+            class="no-player"
+            id="noPlayer"
+        >
+            Pemain tidak ditemukan.
+        </div>
+
+    </div>
+
+</section>
+
+
+
 <!-- =========================
      PRIZE
 ========================= -->
@@ -270,6 +422,7 @@
             PRIZE POOL
         </p>
 
+
         <h2 class="section-title">
             HADIAH
         </h2>
@@ -281,9 +434,11 @@
                 CHAMPION
             </span>
 
+
             <h3>
                 Rp2.200.000
             </h3>
+
 
             <p>
                 TROPHY + VIP 2 JAM
@@ -293,6 +448,7 @@
 
 
         <div class="prize-grid">
+
 
             <div class="prize-card">
 
@@ -351,6 +507,7 @@
 </section>
 
 
+
 <!-- =========================
      RULES
 ========================= -->
@@ -363,6 +520,7 @@
             TOURNAMENT RULES
         </p>
 
+
         <h2 class="section-title">
             RULES
         </h2>
@@ -370,61 +528,123 @@
 
         <div class="rules-list">
 
+
             <div class="rule">
+
                 <span>01</span>
-                <p>Maksimal 2 nama per peserta.</p>
+
+                <p>
+                    Maksimal 2 nama per peserta.
+                </p>
+
             </div>
 
+
             <div class="rule">
+
                 <span>02</span>
-                <p>Handicap khusus 3A dan 3B versi Ninepool.</p>
+
+                <p>
+                    Handicap khusus 3A dan 3B versi Ninepool.
+                </p>
+
             </div>
 
+
             <div class="rule">
+
                 <span>03</span>
-                <p>Race 3, semifinal dan final Race 4.</p>
+
+                <p>
+                    Race 3, semifinal dan final Race 4.
+                </p>
+
             </div>
 
+
             <div class="rule">
+
                 <span>04</span>
-                <p>Self racking / 9 di titik spot.</p>
+
+                <p>
+                    Self racking / 9 di titik spot.
+                </p>
+
             </div>
 
+
             <div class="rule">
+
                 <span>05</span>
-                <p>Break bergantian.</p>
+
+                <p>
+                    Break bergantian.
+                </p>
+
             </div>
 
+
             <div class="rule">
+
                 <span>06</span>
-                <p>Golden break tidak berlaku.</p>
+
+                <p>
+                    Golden break tidak berlaku.
+                </p>
+
             </div>
 
+
             <div class="rule">
+
                 <span>07</span>
-                <p>Menggunakan Box Break.</p>
+
+                <p>
+                    Menggunakan Box Break.
+                </p>
+
             </div>
 
+
             <div class="rule">
+
                 <span>08</span>
-                <p>Berpakaian bebas, rapi, dan menggunakan celana panjang.</p>
+
+                <p>
+                    Berpakaian bebas, rapi, dan menggunakan celana panjang.
+                </p>
+
             </div>
 
+
             <div class="rule">
+
                 <span>09</span>
-                <p>Dilarang melakukan sharking terhadap lawan.</p>
+
+                <p>
+                    Dilarang melakukan sharking terhadap lawan.
+                </p>
+
             </div>
 
+
             <div class="rule">
+
                 <span>10</span>
-                <p>Menjunjung tinggi sportivitas.</p>
+
+                <p>
+                    Menjunjung tinggi sportivitas.
+                </p>
+
             </div>
+
 
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -439,19 +659,23 @@
             ORGANIZED BY
         </p>
 
+
         <img
             src="images/logo.png"
             alt="9-Pool Billiards & Cafe"
             class="footer-logo"
         >
 
+
         <h2>
             9-POOL
         </h2>
 
+
         <p class="organizer-name">
             BILLIARDS & CAFE
         </p>
+
 
         <p class="organizer-description">
             Home Tournament 2026
@@ -460,6 +684,7 @@
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -474,6 +699,7 @@
             © 2026 9-POOL BILLIARDS & CAFE
         </p>
 
+
         <p>
             HOME TOURNAMENT
         </p>
@@ -483,7 +709,9 @@
 </footer>
 
 
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
