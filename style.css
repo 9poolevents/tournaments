@@ -1,0 +1,805 @@
+/* ==============================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0b0b;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ==============================
+   NAVBAR
+================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(0,0,0,0.92);
+
+    border-bottom: 1px solid #303030;
+}
+
+.nav-container {
+    width: 92%;
+    max-width: 1250px;
+    height: 85px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand img {
+    width: 180px;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-menu a {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #f7931e;
+}
+
+.menu-button {
+    display: none;
+
+    border: 0;
+    background: transparent;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* ==============================
+   HERO
+================================ */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 140px 20px 80px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #333333 0%,
+            #171717 35%,
+            #080808 75%
+        );
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.85)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+}
+
+.organizer {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border: 1px solid #f7931e;
+
+    color: #f7931e;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+.hero-logo {
+    display: block;
+
+    width: min(460px, 85%);
+
+    margin: 0 auto 25px;
+}
+
+.hero-line {
+    width: 70px;
+    height: 3px;
+
+    margin: 10px auto 25px;
+
+    background: #f7931e;
+}
+
+.hero-small {
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #bdbdbd;
+
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(70px, 11vw, 145px);
+
+    letter-spacing: 4px;
+
+    line-height: 0.85;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #f7931e;
+}
+
+.game-type {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 8px 30px;
+
+    background: #ffd54a;
+
+    color: #000;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 24px;
+
+    letter-spacing: 5px;
+}
+
+.event-date {
+    margin-top: 30px;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.event-time {
+    margin-top: 8px;
+
+    color: #bdbdbd;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==============================
+   BUTTON
+================================ */
+
+.hero-buttons {
+    margin-top: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.button {
+    padding: 15px 28px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    border-radius: 4px;
+
+    transition: 0.3s;
+}
+
+.primary-button {
+    background: #f7931e;
+
+    color: #000;
+}
+
+.primary-button:hover {
+    background: #ffd54a;
+
+    transform: translateY(-3px);
+}
+
+.secondary-button {
+    border: 1px solid #666;
+
+    background: rgba(255,255,255,0.04);
+}
+
+.secondary-button:hover {
+    border-color: #f7931e;
+
+    color: #f7931e;
+}
+
+
+/* ==============================
+   SCROLL
+================================ */
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 3;
+}
+
+.scroll-indicator span {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #777;
+}
+
+.scroll-line {
+    height: 30px;
+    width: 1px;
+
+    background: #f7931e;
+
+    margin: 8px auto 0;
+}
+
+
+/* ==============================
+   GENERAL SECTION
+================================ */
+
+.section {
+    padding: 110px 20px;
+}
+
+.section-container {
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.dark-section {
+    background: #111111;
+}
+
+.section-label {
+    color: #f7931e;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(45px, 7vw, 75px);
+
+    letter-spacing: 3px;
+}
+
+.section-description {
+    max-width: 600px;
+
+    margin: 10px auto 50px;
+
+    color: #999;
+
+    line-height: 1.8;
+}
+
+
+/* ==============================
+   COUNTDOWN
+================================ */
+
+.countdown-section {
+    padding: 75px 20px;
+
+    background: #000;
+
+    border-top: 1px solid #222;
+
+    border-bottom: 1px solid #222;
+}
+
+.countdown {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    max-width: 750px;
+
+    margin: 35px auto 0;
+}
+
+.countdown-box {
+    padding: 25px 10px;
+
+    background: #171717;
+
+    border: 1px solid #303030;
+}
+
+.countdown-box span {
+    display: block;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    color: #ffd54a;
+
+    font-size: 55px;
+}
+
+.countdown-box small {
+    color: #888;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==============================
+   INFO
+================================ */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 50px;
+}
+
+.info-card {
+    position: relative;
+
+    background: #1a1a1a;
+
+    border: 1px solid #303030;
+
+    padding: 40px 20px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    border-color: #f7931e;
+
+    transform: translateY(-5px);
+}
+
+.card-number {
+    position: absolute;
+
+    right: 12px;
+    top: 5px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 60px;
+
+    color: rgba(255,255,255,0.04);
+}
+
+.info-card p {
+    color: #999;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.info-card h3 {
+    margin-top: 12px;
+
+    color: #ffffff;
+
+    font-size: 25px;
+}
+
+
+/* ==============================
+   PRIZE
+================================ */
+
+.prize-section {
+    background: #090909;
+}
+
+.champion-card {
+    max-width: 650px;
+
+    margin: 45px auto 20px;
+
+    padding: 55px 20px;
+
+    border: 1px solid #ffd54a;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1a1608,
+            #111111
+        );
+}
+
+.champion-label {
+    color: #ffd54a;
+
+    letter-spacing: 5px;
+
+    font-size: 13px;
+}
+
+.champion-card h3 {
+    margin: 15px 0 5px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 60px;
+
+    color: #ffd54a;
+}
+
+.champion-card p {
+    color: #aaa;
+
+    letter-spacing: 2px;
+
+    font-size: 12px;
+}
+
+.prize-grid {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.prize-card {
+    padding: 30px 15px;
+
+    border: 1px solid #303030;
+
+    background: #171717;
+}
+
+.prize-card span {
+    display: block;
+
+    color: #999;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.prize-card strong {
+    display: block;
+
+    margin: 12px 0;
+
+    font-size: 22px;
+
+    color: #f7931e;
+}
+
+.prize-card small {
+    color: #777;
+}
+
+
+/* ==============================
+   RULES
+================================ */
+
+.rules-list {
+    max-width: 850px;
+
+    margin: 50px auto 0;
+
+    text-align: left;
+}
+
+.rule {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 20px 5px;
+
+    border-bottom: 1px solid #303030;
+}
+
+.rule span {
+    color: #f7931e;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 24px;
+}
+
+.rule p {
+    color: #ddd;
+
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   ORGANIZER
+================================ */
+
+.organizer-section {
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background: #070707;
+}
+
+.footer-logo {
+    width: min(380px, 85%);
+
+    margin: 25px auto;
+
+    display: block;
+}
+
+.organizer-section h2 {
+    font-family: "Bebas Neue", sans-serif;
+
+    color: #f7931e;
+
+    font-size: 55px;
+
+    letter-spacing: 5px;
+}
+
+.organizer-name {
+    letter-spacing: 5px;
+
+    font-size: 13px;
+}
+
+.organizer-description {
+    margin-top: 15px;
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+/* ==============================
+   FOOTER
+================================ */
+
+footer {
+    padding: 25px 20px;
+
+    background: #000;
+
+    border-top: 1px solid #222;
+}
+
+.footer-container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #555;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+    .nav-container {
+        height: 72px;
+    }
+
+    .brand img {
+        width: 135px;
+    }
+
+    .nav-menu {
+        display: none;
+
+        position: absolute;
+
+        top: 72px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: #000;
+
+        flex-direction: column;
+
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero-logo {
+        width: 85%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        max-width: 260px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .countdown {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .prize-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 8px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 68px;
+    }
+
+    .event-date {
+        font-size: 15px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .countdown-box span {
+        font-size: 42px;
+    }
+
+    .champion-card h3 {
+        font-size: 48px;
+    }
+
+}
